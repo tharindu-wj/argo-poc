@@ -11,5 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "jira-connector": "^2.15.7"
+  },
+  "devDependencies": {
+    "dotenv": "^8.0.0",
+    "eslint": "^6.0.1",
+    "nodemon": "^1.19.1"
   }
 }
