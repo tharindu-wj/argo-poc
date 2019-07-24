@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "name": "Test API Gateway",
+  "port": 8000,
+  "cache_ttl": "3600s",
+  "timeout": "3s",
+  "extra_config": {},
+  "output_encoding": "json",
+  "endpoints": [
+    {
+      "endpoint": "argo/api/v1/all",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/api/v1/auth",
+          "host": [
+            "http://127.0.0.1:5000"
+          ],
+          "group": "auth"
+        },
+        {
+          "url_pattern": "/api/v1/users",
+          "host": [
+            "http://127.0.0.1:5001"
+          ],
+          "group": "users"
+        },
+        {
+          "url_pattern": "/api/v1/containers",
+          "host": [
+            "http://127.0.0.1:5002"
+          ],
+          "group": "containers"
+        }
+      ],
+      "extra_config": {
+        "github.com/devopsfaith/krakend/proxy": {
+          "sequential": true
+      }
+      }
+    }
+  ]
+}
