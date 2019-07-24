@@ -26,34 +26,34 @@ const jira = new JiraClient({
 // });
 
 
-// const newProject = {
-//   "notificationScheme": 10021,
-//   "description": "Example Project description",
-//   "lead": "Charlie",
-//   "url": "http://atlassian.com",
-//   "projectTemplateKey": "com.atlassian.jira-core-project-templates:jira-core-simplified-project-management",
-//   "avatarId": 10200,
-//   "issueSecurityScheme": 10001,
-//   "name": "Example",
-//   "permissionScheme": 10011,
-//   "assigneeType": "PROJECT_LEAD",
-//   "projectTypeKey": "business",
-//   "key": "EX",
-//   "categoryId": 10120
-// }
+const newProject = {
+  "notificationScheme": 10021,
+  "description": "Example Project description",
+  "lead": "Charlie",
+  "url": "http://atlassian.com",
+  "projectTemplateKey": "com.atlassian.jira-core-project-templates:jira-core-simplified-project-management",
+  "avatarId": 10200,
+  "issueSecurityScheme": 10001,
+  "name": "Example",
+  "permissionScheme": 10011,
+  "assigneeType": "PROJECT_LEAD",
+  "projectTypeKey": "business",
+  "key": "EX",
+  "categoryId": 10120
+}
 
-// jira.project.createProject(newProject, (error, prj) =>{
-//   if(error) {
-//     console.log(error)
-//   } else {
-//     console.log(prj);
-//   }
-// })
-
-jira.project.getAllProjects({},(error, prj) =>{
+jira.project.createProject(newProject, (error, prj) =>{
   if(error) {
     console.log(error)
   } else {
     console.log(prj);
   }
-} )
+})
+
+// jira.project.getAllProjects({},(error, prj) =>{
+//   if(error) {
+//     console.log(error)
+//   } else {
+//     console.log(prj);
+//   }
+// } )
