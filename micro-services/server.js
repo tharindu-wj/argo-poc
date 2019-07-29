@@ -5,7 +5,7 @@ const containersApp = express()
 const jiraApp = express()
 
 jiraApp.use(express.json())
-jiraApp.use(express.urlencoded());
+jiraApp.use(express.urlencoded({ extended: false }));
 
 // auth app
 const authRouter = require('./routes/auth')
